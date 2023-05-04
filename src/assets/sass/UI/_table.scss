@@ -1,0 +1,74 @@
+.ui-table {
+
+    &__filter {
+        margin-bottom: 1rem;
+    }
+
+    &__body {
+        display: grid;
+        border: 1px solid black;
+        margin-bottom: 1rem;
+
+        @media screen and (max-width: $tablet-breakpoint) {
+            grid-template-columns: 1fr !important;
+            gap: 10px;
+            border: none;
+        }
+    }
+
+    &__row {
+        display: contents;
+
+        @media screen and (max-width: $tablet-breakpoint) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border: 1px solid black;
+            padding: 10px;
+        }
+    }
+
+
+
+    &__cell {
+        text-align: center;
+        padding: 10px;
+        &:not(:last-child) {
+            border-right: 1px solid black;
+        }
+        border-bottom: 1px solid black;
+
+        @media screen and (max-width: $tablet-breakpoint) {
+            border: none;
+            display: flex;
+            padding: 0;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            &:not(:last-child) {
+                border-right: none;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    &__cell-label {
+        display: none;
+        font-weight: 700;
+        @media screen and (max-width: $tablet-breakpoint) {
+            display: block;
+        }
+    }
+
+    &__row:last-child &__cell {
+        border-bottom: none;
+    }
+
+    &__head {
+        display: contents;
+        @media screen and (max-width: $tablet-breakpoint) {
+            display: none;
+        }
+    }
+
+}

@@ -1,0 +1,44 @@
+.ui-pagination {
+  display: flex;
+
+  &__item{
+    position: relative;
+    display: block;
+    cursor: pointer;
+    padding: .375rem .75rem;
+    color: #0d6efd;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    transition: color .15s ease-in-out,
+      background-color .15s ease-in-out,
+      border-color .15s ease-in-out,
+      box-shadow .15s ease-in-out;
+
+    &_disabled {
+      color: #6c757d;
+      pointer-events: none;
+      background-color: #fff;
+      border-color: #dee2e6;
+    }
+
+    &:first-child {
+      border-top-left-radius: .25rem;
+      border-bottom-left-radius: .25rem;
+    }
+  
+    &:not(:first-child) {
+        margin-left: -1px;
+    }
+  
+    &:last-child {
+        border-top-right-radius: .25rem;
+        border-bottom-right-radius: .25rem;
+    }
+
+    &:hover {
+      background-color: #e9ecef;
+      border-color: #dee2e6;
+    }
+  }
+}

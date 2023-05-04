@@ -1,0 +1,40 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  min-height: 100%;
+  font-size: 14px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 24px;
+}
+
+hr {
+  margin: 1rem 0;
+  color: inherit;
+  background-color: currentColor;
+  border: 0;
+  opacity: .25;
+  height: 1px;
+}

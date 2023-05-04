@@ -1,0 +1,17 @@
+.ui-alert {
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+
+  &_success {
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+  }
+
+  &__header {
+    color: inherit;
+    font-size: 1.5rem;
+  }
+}

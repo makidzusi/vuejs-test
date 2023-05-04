@@ -37,6 +37,7 @@ export default {
   },
   methods: {
     clearString(_string) {
+      // у вас была проблема ? Вы решили ее регуляркой, теперь у вас две проблемы
       const regex = new RegExp(/[^\d|.|,]+/g);
       return _string.replace(regex, '').replaceAll(',', '.');
     },

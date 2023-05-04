@@ -20,6 +20,8 @@ let getPayments = (params = {}) => instance.request({
   params,
 });
 
+// ну скоре всего, мы бы просто опять же стучались на разные бэки через VUE_APP_API_URL разные для прода и дева
+// а тут прям костыль костыльный :)
 if (process.env.NODE_ENV !== 'production') {
   getPayments = mockPayments;
 }

@@ -64,6 +64,11 @@ export default {
       return `col-${label}`;
     },
   },
+  watch: {
+    moneyFilter() {
+      this.page = 1;
+    },
+  },
   computed: {
     pageCount() {
       return Math.ceil(this.filteredRows.length / this.pageSize);
@@ -72,6 +77,9 @@ export default {
       // хорошо бы, вынести фильтрацию на бэк, у меня так был печальный опыт с проектом
       // бэкэнд отдавал +- 5 тысяч больших записей и приходилось их в indexedDb сохранять и фильтровать
       // чтобы лишний раз на бэк не ходить и не зависать, но это поможет только если услово "холодные" данные
+      if (Number.isNaN(Number(this.moneyFilter))) {
+        return this.$props.rows;
+      }
       return this.$props.rows.filter((el) => el.money <= this.moneyFilter);
     },
     paginatedRows() {

@@ -69,7 +69,6 @@ export default {
       if (tail?.length >= 3) {
         tail = tail.slice(0, 2);
       }
-      console.log(intPart, tail);
       this.numberValue = Number([intPart, tail].join('.'));
 
       if (Number.isNaN(this.numberValue)) {
@@ -79,9 +78,6 @@ export default {
       intPart = this.formatNumber(intPart);
 
       this.rawInput = tail === undefined ? intPart : `${intPart}.${tail}`;
-      // this.$nextTick(() => {
-      //   this.$refs.input.setSelectionRange(this.cursorPosition + 1, this.cursorPosition + 1);
-      // });
     },
     isAllowedLetter(letter) {
       const regex = new RegExp(/\d|,|\./gm);

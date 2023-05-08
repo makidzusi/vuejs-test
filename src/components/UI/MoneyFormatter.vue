@@ -1,10 +1,3 @@
-<template>
-  <span>
-    <slot name="value" v-bind:value="formattedValue">
-    </slot>
-  </span>
-</template>
-
 <script>
 // можно было бы форматирование также вынести в функцию, чтобы использовать в коде
 // или шаблоне через {{format(value)}} ,
@@ -22,6 +15,11 @@ export default {
       type: String,
       default: 'ru-RU',
     },
+  },
+  render() {
+    return this.$scopedSlots.default({
+      value: this.formattedValue,
+    });
   },
   computed: {
     formattedValue() {

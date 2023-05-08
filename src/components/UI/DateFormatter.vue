@@ -1,10 +1,3 @@
-<template>
-  <span>
-    <slot name="date" v-bind:date="formattedDate">
-    </slot>
-  </span>
-</template>
-
 <script>
 import { DateTime } from 'luxon';
 // можно было бы форматирование также вынести в функцию, чтобы использовать в коде
@@ -23,6 +16,11 @@ export default {
       type: String,
       default: 'dd.MM.yyyy',
     },
+  },
+  render() {
+    return this.$scopedSlots.default({
+      value: this.formattedDate,
+    });
   },
   computed: {
     formattedDate() {

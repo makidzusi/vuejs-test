@@ -19,17 +19,18 @@
       <data-table :rows="data" :columns="columns">
 
         <template #col-date="{ value }">
-          <ui-date-formatter :date="value">
-            <template #date="{ date }">
-              {{ date }}
-            </template>
+          <ui-date-formatter :date="value" v-slot:default="{value : formattedDate }">
+            <div>
+              {{ formattedDate }}
+            </div>
           </ui-date-formatter>
         </template>
 
         <template #col-money="{ value }">
-          <ui-money-formatter :value="value">
-            <template #value="{ value }">
-              {{ value }}</template>
+          <ui-money-formatter :value="value" v-slot:default="{value : formattedValue}">
+            <div>
+              {{ formattedValue }}
+            </div>
           </ui-money-formatter>
         </template>
 
